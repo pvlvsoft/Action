@@ -46,7 +46,4 @@ public interface Publisher {
             observer.go();
         }
     }
-
-
-    
 }
