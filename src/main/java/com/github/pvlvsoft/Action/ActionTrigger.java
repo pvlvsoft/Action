@@ -45,4 +45,34 @@ public interface ActionTrigger {
      *                      processes.
      */
     public void listen(boolean shouldListen);
+
+
+    /**
+     * <p>Default getter for the {@code shouldListen} field.</p>
+     *
+     * @return  if this trigger should listen.
+     */
+    public boolean getListen();
+
+
+    /**
+     * <p>This method begins the process of the {@link Action} creation,
+     * triggering and execution.</p>
+     *
+     * @return  {@link Action} instance which have been created and initiated.
+     *          This may be {@code null} - when this {@link ActionTrigger}
+     *          is not listening.
+     */
+    default Action go() {
+
+        Action action = null;
+
+        if(getListen()) {
+
+            action = getActionFactory().create();
+            action.execute();
+        }
+
+        return action;
+    }
 }

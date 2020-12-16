@@ -27,9 +27,4 @@ import com.github.pvlvsoft.Action.ActionTrigger;
 public interface Observer extends ActionTrigger {
 
 
-    /**
-     * <p>This method begins the process of the {@link Action} creation,
-     * triggering and execution.</p>
-     */
-    public void go();
 }
